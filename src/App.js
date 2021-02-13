@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+
+const CreateElementComponent = () =>
+  React.createElement('h2', {}, 'Component using React.CreateElement method');
+
+class Component extends React.Component {
+  render() {
+    return <h2>Component using React.Component method</h2>;
+  }
+}
+
+class PureComponent extends React.PureComponent {
+  render() {
+    return <h2>Component using React.PureComponent method</h2>;
+  }
+}
+
+const FunctionalComponent = () => <h2>Functional component</h2>;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h2>Hello World</h2>
+      <CreateElementComponent />
+      <Component />
+      <PureComponent />
+      <FunctionalComponent />
     </div>
   );
 }
